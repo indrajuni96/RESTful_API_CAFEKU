@@ -1,4 +1,4 @@
-# API-ExpresJS-Boilerplate
+# RESTful API CAFEKU
 
 <p align="center">
   <a href="https://nodejs.org/">
@@ -11,14 +11,22 @@
 ## Installation
 
 ```bash
-$ git clone https://github.com/indrajuni96/API-ExpresJS-Boilerplate.git
+$ git clone https://github.com/indrajuni96/RESTful_API_CAFEKU.git
 $ cd [folder]
 $ npm install
 ```
 
-### Create Environment Variables
+## Create Environment Variables
 
 ```bash
 $ mv .env.example .env
 $ [your text editor] .env
 ```
+
+## Features
+
+- Register User
+- Login User With JWT
+- CRUD Category
+- CRUD Product
+
