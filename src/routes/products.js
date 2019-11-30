@@ -8,5 +8,7 @@ route
     .post('/create', productController.addProduct)
     .put('/update/:id', productController.editProduct)
     .delete('/delete/:id', productController.deleteProduct)
+    .patch('/order/:id', productController.addQuantityProduct)
+    .patch('/reduce/:id', productController.reduceQuantityProduct)
 
 module.exports = route

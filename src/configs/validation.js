@@ -60,5 +60,13 @@ module.exports = {
             .required(),
         qty: Joi.number()
             .required()
+    }),
+    addQtyProduct: Joi.object({
+        qty: Joi.number()
+            .required()
+    }),
+    reduceQtyProduct: Joi.object({
+        qty: Joi.number()
+            .required()
     })
 }

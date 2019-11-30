@@ -171,5 +171,70 @@ module.exports = {
                     message: 'Failed to delete data!'
                 })
             })
-    }
+    },
+    addQuantityProduct: async (req, res) => {
+        const id = req.params
+        const data = {
+            qty: req.body.qty
+        }
+        const qty = data.qty
+        // const validation = schema.addQtyProduct.validate(data)
+
+        // if (validation.error) {
+        //     return res.status(400).json({
+        //         status: 400,
+        //         message: validation.error.details[0].message
+        //     });
+        // }
+
+        await productsModel.addQuantityProduct(qty, id)
+            .then(result => {
+                res.json({
+                    status: 200,
+                    message: "Quantity added successfully!",
+                    qty,
+                    date_updated: new Date()
+                });
+            })
+            .catch(err => {
+                res.status(500).json({
+                    status: 500,
+                    message: "Failed to add quantity!",
+                    error: err
+                });
+            });
+    },
+    reduceQuantityProduct: (req, res) => {
+        const id = req.params
+        const data = {
+            qty: req.body.qty
+        }
+        const qty = data.qty
+
+        // const validation = schema.reduceQtyProduct.validate(data)
+
+        // if (validation.error) {
+        //     return res.status(400).json({
+        //         status: 400,
+        //         message: validation.error.details[0].message
+        //     });
+        // }
+
+        productsModel.reduceQuantityProduct(qty, id)
+            .then(result => {
+                res.json({
+                    status: 200,
+                    message: "Quantity reduced successfully!",
+                    qty,
+                    date_updated: new Date()
+                });
+            })
+            .catch(err => {
+                res.status(400).json({
+                    status: 400,
+                    message: "Failed to reduce quantity!",
+                    error: "Quantity too much! Result cannot go below 0!"
+                });
+            });
+    },
 }
