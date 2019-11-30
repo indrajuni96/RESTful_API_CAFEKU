@@ -4,7 +4,22 @@ const schema = require('../configs/validation')
 
 module.exports = {
     getProducts: async (req, res) => {
-        await productsModel.getProducts()
+        const search = req.query.search ? `%${req.query.search}%` : "%%"
+        const sortBy = req.query.sortBy ? `p.${req.query.sortBy}` : "p.created_at"
+        const sortMode = req.query.sortMode ? req.query.sortMode : "ASC"
+        const page = parseInt(req.query.page, 10) || 1
+        const offset = (page - 1) * 9
+        const limit = page ? 9 : 20
+
+        const data = {
+            search,
+            sortBy,
+            sortMode,
+            offset,
+            limit
+        }
+
+        await productsModel.getProducts(data)
             .then(result => {
                 res.json({
                     status: 200,
