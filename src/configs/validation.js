@@ -68,5 +68,16 @@ module.exports = {
     reduceQtyProduct: Joi.object({
         qty: Joi.number()
             .required()
+    }),
+    history_add: Joi.object({
+        invoice: Joi.string()
+            .alphanum()
+            .required(),
+        user: Joi.string()
+            .required(),
+        orders: Joi.string()
+            .required(),
+        price: Joi.number()
+            .required(),
     })
 }
