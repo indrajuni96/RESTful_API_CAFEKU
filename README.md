@@ -30,3 +30,15 @@ $ [your text editor] .env
 - CRUD Category
 - CRUD Product
 
+## Dependencies
+
+| Plugin             | README                                                                                                                |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| @hapi/joi          | [https://hapi.dev/family/joi/](https://hapi.dev/family/joi/?v=16.1.8)                                                 |
+| Bcrypt             | [package/bcrypt](https://www.npmjs.com/package/bcrypt)                                                                |
+| Cloudinary         | [package/cloudinary](https://www.npmjs.com/package/cloudinary)                                                        |
+| Cors               | [cors/blob/master/README.md](https://github.com/expressjs/cors/blob/master/README.md)                                 |
+| Dot Env            | [package/dotenv](https://www.npmjs.com/package/dotenv)                                                                |
+| Express            | [express/blob/master/Readme.md](https://github.com/expressjs/express/blob/master/Readme.md)                           |
+| Express fileupload | [express-fileupload/blob/master/README.md](https://github.com/richardgirges/express-fileupload/blob/master/README.md) |
+| JWT                | [auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme)                                          |

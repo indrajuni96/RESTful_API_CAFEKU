@@ -74,7 +74,7 @@ module.exports = {
         }
 
         const imageUpload = await cloudImage.upload(file)
-        // console.log(imageUpload.url)
+        // console.log(req.files.image)
 
         data.image = imageUpload.url
         // console.log(data)
